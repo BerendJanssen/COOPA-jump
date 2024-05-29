@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#startknop {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    padding: 237px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 3em;
+}
+
+#timer {
+    text-align: end;
+    margin-right: 10px;
+    font-size: 1.3em;
+    color: #000000;
+}
+
+#gameOver {
+    text-align: center;
+    font-size: 2.2em;
+    margin-top: 200px;
+    color: #000000;
+}
+
+#gameOverInstructies {
+    text-align: center;
+    font-size: 1.1em;
+    font-style: bold;
+    color: #000000;
+}
+
+#game {
+    width: 1000px;
+    height: 500px;
+    border: 3px solid #000000;
+    margin: auto;
+    margin-top: 50px;
+    background-image: url(../images/achtergrond.png);
+    background-size: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+#grond {
+    width: 1000px;
+    height: 80px;
+    position: absolute;
+    top: 450px;
+    background-color: rgb(255, 255, 217);
+    border-top: rgb(142, 135, 99) 1px solid;
+}
+
+#pop {
+    width: 30px;
+    height: 75px;
+    background-color: transparent;
+    background-image: url(../images/pop.png);
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+}
+
+#muur {
+    width: 30px;
+    height: 45px;
+    background-image: url(../images/muur.png);
+    position: absolute;
+    bottom: 50px;
+    left: 1000px;
+    animation: slide 3s linear infinite;
+    animation-play-state: running;
+}
+
+#plafond {
+    width: 30px;
+    height: 416px;
+    background-image: url(../images/plafond.png);
+    position: absolute;
+    bottom: 85px;
+    left: 1000px;
+    animation: slide 2.5s linear infinite;
+    animation-play-state: running;
+}
+
+@keyframes slide {
+    0% {
+        left: 1250px;
+    }
+
+    100% {
+        left: -250px;
+    }
+}
+
+.springen {
+    animation: boing 500ms;
+}
+
+@keyframes boing {
+    0% {top: 380px}
+    10% {top: 338px}
+    20% {top: 320px}
+    30% {top: 310px}
+    40% {top: 305px}
+    50% {top: 300px}
+    60% {top: 305px}
+    70% {top: 310px}
+    80% {top: 320px}
+    90% {top: 338px}
+    100% {top: 380px}
+}
+
+.sliden {
+    animation: woosh 500ms;
+}
+
+@keyframes woosh {
+    0% {top: 400px}
+    10% {top: 418px}
+    20% {top: 424px}
+    30% {top: 428px}
+    40% {top: 429px}
+    50% {top: 430px}
+    60% {top: 429px}
+    70% {top: 428px}
+    80% {top: 424px}
+    90% {top: 418px}
+    100% {top: 400px}
+}
