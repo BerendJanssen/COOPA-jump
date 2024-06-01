@@ -1,5 +1,6 @@
 const tijd = document.querySelector('#timer')
 const gameOverTekst = document.querySelector('#gameOver')
+const eindScore = document.querySelector('#score')
 const gameOverInstructieTekst = document.querySelector('#gameOverInstructies')
 
 const geluidSpring = new Audio("./audio/geluidSpring.mp3") //Laten zien door Marieke in de les
@@ -253,7 +254,8 @@ function gameOver() {
         geluidGameOver.play()
         gameOverTekst.textContent = 'Game Over'
         gameOverInstructieTekst.textContent = 'Klik om opnieuw te starten'
-        tijd.textContent = 'Eindscore: ' + counter
+        tijd.textContent = ''
+        eindScore.textContent = 'Score: ' + counter
 
         muur.style.animationPlayState = 'paused'
         plafond.style.animationPlayState = 'paused'
