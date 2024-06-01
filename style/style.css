@@ -7,7 +7,14 @@
     text-align: center;
     color: rgb(0, 0, 0);
     font-size: 1.5em;
-    padding: 237px;
+    padding-top: 237px;
+}
+
+#subtekstStart {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+    padding-top: 10px;
 }
 
 a {
@@ -79,8 +86,6 @@ h1 {
     position: absolute;
     bottom: 50px;
     left: 1000px;
-    animation: slide 3s linear infinite;
-    animation-play-state: running;
 }
 
 #plafond {
@@ -90,11 +95,11 @@ h1 {
     position: absolute;
     bottom: 85px;
     left: 1000px;
-    animation: slide 2.5s linear infinite;
-    animation-play-state: running;
 }
 
-@keyframes slide {
+
+
+@keyframes obstakelSlide {
     0% {
         left: 1250px;
     }
@@ -105,10 +110,10 @@ h1 {
 }
 
 .springen {
-    animation: boing 500ms;
+    animation: spring 500ms;
 }
 
-@keyframes boing {
+@keyframes spring {
     0% {top: 380px}
     10% {top: 338px}
     20% {top: 320px}
@@ -123,19 +128,16 @@ h1 {
 }
 
 .sliden {
-    animation: woosh 500ms;
+    animation: slide 500ms;
 }
 
-@keyframes woosh {
+@keyframes slide {
     0% {top: 400px}
-    10% {top: 418px}
-    20% {top: 424px}
-    30% {top: 428px}
-    40% {top: 429px}
-    50% {top: 430px}
-    60% {top: 429px}
-    70% {top: 428px}
-    80% {top: 424px}
-    90% {top: 418px}
+    10% {top: 420px}
+    20% {top: 428px}
+    30% {top: 431px}
+    70% {top: 431px}
+    80% {top: 428px}
+    90% {top: 420px}
     100% {top: 400px}
 }
