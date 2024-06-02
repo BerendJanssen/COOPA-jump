@@ -3,7 +3,7 @@ const gameOverTekst = document.querySelector('#gameOver')
 const eindScore = document.querySelector('#score')
 const gameOverInstructieTekst = document.querySelector('#gameOverInstructies')
 
-const geluidSpring = new Audio("./audio/geluidSpring.mp3") //Laten zien door Marieke in de les
+const geluidSpring = new Audio("./audio/geluidSpring.mp3")
 const geluidSlide = new Audio("./audio/geluidSlide.mp3")
 const geluidGameOver = new Audio("./audio/geluidGameOver.mp3")
 
@@ -15,6 +15,7 @@ let counter = 0
 let spelLoopt = true
 let animatieLoop = setInterval(startAnimatie, 2600)
 
+//Checkt elke 0.01s of het spel nog loopt
 const gameLoop = setInterval(function () {
     if (spelLoopt) {
         gameOver()
@@ -172,7 +173,7 @@ plafond.addEventListener('animationend', eindPlafondAnimatie)
 
 document.addEventListener('click', startOpnieuw)
 
-//Event listeners die de key 'w' en 's' koppelen aan springen en sliden - https://www.toptal.com/developers/keycode handige website aangeraden door Manuel
+//Event listeners die de key 'w' en 's' koppelen aan springen en sliden - https://www.toptal.com/developers/keycode handige link van Manuel
 document.addEventListener('keypress', function (event) {
     if (event.key === 'w') {
         springen()
@@ -186,5 +187,3 @@ document.addEventListener('keypress', function (event) {
 setInterval(count, 1000)
 
 geluidSpring.volume = 0.1
-
-
