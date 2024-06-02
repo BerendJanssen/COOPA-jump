@@ -15,7 +15,7 @@ let counter = 0
 let spelLoopt = true
 let animatieLoop = setInterval(startAnimatie, 2600)
 
-//Checkt elke 0.01s of het spel nog loopt
+//Checkt elke 0.01s of het spel nog loopt, zo niet voert hij de funtie gameOver uit
 const gameLoop = setInterval(function () {
     if (spelLoopt) {
         gameOver()
@@ -59,7 +59,7 @@ function startAnimatie() {
             animatieLoop = setInterval(startAnimatie, 900)
         }
 
-
+        // If statement om de selectie van muren en plafonds te randomizen (50/50)
         if (Math.random() < 0.5) {
             muur.style.animation = `obstakelSlide ${snelheid}s linear`
             muur.style.animationPlayState = 'running'
@@ -72,6 +72,7 @@ function startAnimatie() {
     }
 }
 
+//Functie die animatie weer op stop zet wanneer deze is beindigt, eventListener weet waneer die eindigt
 function eindMuurAnimatie() {
     muur.style.animation = 'none'
     muur.style.animationPlayState = 'paused'
@@ -82,7 +83,7 @@ function eindPlafondAnimatie() {
     plafond.style.animationPlayState = 'paused'
 }
 
-//function voor de timer/score
+//function voor de timer/score (score = tijd)
 function count() {
     if (spelLoopt) {
         tijd.textContent = counter
@@ -90,6 +91,7 @@ function count() {
     }
 }
 
+//Functie die spring animatie toevoegd aan pop en ook weer weghaalt
 function springen() {
     if (!pop.classList.contains('springen')) {
         pop.classList.add('springen')
@@ -101,6 +103,7 @@ function springen() {
     }, 500)
 }
 
+//Functie die slide animatie toevoegd aan pop en ook weer weghaald
 function sliden() {
     if (!pop.classList.contains('sliden')) {
         pop.classList.add('sliden')
@@ -114,7 +117,7 @@ function sliden() {
     }, 500)
 }
 
-// Functie om te controleren wanneer rechthoeken elkaar raken
+// Functie die zegt dat er 'collision' plaatsvind wanneer twee rechthoeken elkaar overlappen
 function collision(rect1, rect2) {
     return !(rect1.right < rect2.left ||
         rect1.left > rect2.right ||
@@ -123,6 +126,7 @@ function collision(rect1, rect2) {
 }
 
 // Functie om 'Game Over' te laten zien en het spel te stoppen - x.getBoundingClientRect aangeraden door Ninti
+// Maakt constantes aan voor de hitboxen van alle bewegende elementen en controleert of er tussen deze collision plaatsvind
 function gameOver() {
     const popHitbox = pop.getBoundingClientRect()
     const muurHitbox = muur.getBoundingClientRect()
@@ -146,6 +150,7 @@ function gameOver() {
     }
 }
 
+// Functie om alles te resetten zodat het spel opnieuw gespeeld kan worden
 function startOpnieuw() {
     if (spelLoopt === false) {
         counter = 0
@@ -168,6 +173,7 @@ function startOpnieuw() {
     }
 }
 
+// Event listener die functie om animaties op stop te zetten aanroept zodra een animatie is beindigt
 muur.addEventListener('animationend', eindMuurAnimatie)
 plafond.addEventListener('animationend', eindPlafondAnimatie)
 
@@ -183,7 +189,7 @@ document.addEventListener('keypress', function (event) {
     }
 })
 
-//start de timer
+// Voert elke 1000ms de functie count uit
 setInterval(count, 1000)
 
 geluidSpring.volume = 0.1
