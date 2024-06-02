@@ -141,10 +141,10 @@ h1 {
 @keyframes slide {
     0% {top: 400px}
     10% {top: 420px}
-    20% {top: 428px}
+    20% {top: 431px}
     30% {top: 431px}
     70% {top: 431px}
-    80% {top: 428px}
+    80% {top: 431px}
     90% {top: 420px}
     100% {top: 400px}
 }
